@@ -1,0 +1,155 @@
+<!-- <style>
+    .chatbox {
+        position: fixed;
+        bottom: 0;
+        right: 0px;
+        width: 360px;
+        height: 460px;
+        background-color: #fff;
+        font-family: 'Lato', sans-serif;
+        -webkit-transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+        transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        font-size: smaller;
+    }
+    
+    .chatbox--tray {
+        bottom: -420px;
+    }
+    
+    .chatbox--closed {
+        bottom: -520px;
+    }
+    
+    .chatbox .form-control:focus {
+        border-color: #1f2836;
+    }
+    
+    .chatbox__title,
+    .chatbox__body {
+        border-bottom: none;
+    }
+    
+    .chatbox__title {
+        padding-right: 10px;
+        background: #8ccb6a;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        cursor: pointer;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        height: 40px;
+    }
+    
+    .chatbox__title h6 {
+        height: 50px;
+        margin: 0 0 0 15px;
+        line-height: 50px;
+        position: relative;
+        padding-left: 20px;
+        -webkit-flex-grow: 1;
+        flex-grow: 1;
+    }
+    
+    .chatbox__title h6 a {
+        color: #fff;
+        max-width: 195px;
+        display: inline-block;
+        text-decoration: none;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .chatbox__title h6:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 12px;
+        height: 12px;
+        background: #4CAF50;
+        border-radius: 6px;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    
+    .chatbox__title__tray,
+    .chatbox__title__close {
+        width: 24px;
+        height: 24px;
+        outline: 0;
+        border: none;
+        background-color: transparent;
+        opacity: 0.5;
+        cursor: pointer;
+        -webkit-transition: opacity 200ms;
+        transition: opacity 200ms;
+    }
+    
+    .chatbox__title__tray:hover,
+    .chatbox__title__close:hover {
+        opacity: 1;
+    }
+    
+    .chatbox__title__tray span {
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        border-bottom: 2px solid #fff
+    }
+    
+    .chatbox__title__close svg {
+        vertical-align: middle;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.2px;
+    }
+    
+    .container {
+        height: 100%;
+    }
+</style> -->
+
+<style>
+    .container {
+        height: 100%;
+    }
+</style>
+
+<div class="container">
+
+    <router-outlet>
+
+
+        <!-- <app-chat></app-chat> -->
+
+    </router-outlet>
+
+</div>
+<!-- this is float part at the bttom for product -->
+<!-- 
+<div class="chatbox chatbox--tray chatbox--empty">
+    <div class="chatbox__title">
+        <h6><a href="#">Chat</a></h6>
+        <button class="chatbox__title__tray">
+            <span></span>
+        </button>
+        <button style="display: none;" class="chatbox__title__close">
+            <span>
+                <svg viewBox="0 0 12 12" width="12px" height="12px">
+                    <line stroke="#FFFFFF" x1="11.75" y1="0.25" x2="0.25" y2="11.75"></line>
+                    <line stroke="#FFFFFF" x1="11.75" y1="11.75" x2="0.25" y2="0.25"></line>
+                </svg>
+            </span>
+        </button>
+    </div>
+
+    <iframe style="margin-left: 0px !important;background-image: linear-gradient(to top,#e6e9f0 80%,#eef1f5 100%); border: 1px solid #ddd; border-bottom-left-radius: 10px;border-bottom-right-radius: 10px" height="460" width="370" src="http://127.0.0.1:4200/chatservice"></iframe>
+</div> -->

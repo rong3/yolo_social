@@ -1,0 +1,51 @@
+<div class="container-multimedia">
+    <div class="form-group">
+        <div class="md-form">
+            <div class="input-group md-form form-sm form-1 pl-0">
+                <div class="input-group-prepend">
+                    <span class="input-group-text purple lighten-3" id="basic-text1"><i class="fas fa-search text-black"
+            aria-hidden="true"></i></span>
+                </div>
+                <input type="search" #filterVal [ngModel]="productChange" (ngModelChange)="filter(filterVal.value,filterPrice.value)" aria-label="small" class="form-control sm" id="searchProduct" placeholder="Nhập tên sản phẩm..." />
+
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="md-form">
+            <div class="input-group md-form form-sm form-1 pl-0">
+                <div class="input-group-prepend">
+                    <span class="input-group-text purple lighten-3" id="basic-text1"><i class="fas fa-plus text-black"
+            aria-hidden="true"></i></span>
+                </div>
+                <input type="search" #filterPrice [ngModel]="priceChange" (ngModelChange)="filter(filterVal.value,filterPrice.value)" myCurrencyFormatter aria-label="small" class="form-control sm" id="searchProductPrice" placeholder="Nhập tầm giá có thể mua..." />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="single-unique-product">
+            <div class="tempClass" *ngFor="let product of model | productFilter:filterargs:updated | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+                <div class="discount" *ngIf="product.price.indexOf('line-through')!==-1"></div>
+
+                <img class="img-fluid-custom" width="229" height="280" [src]='product.image' alt="">
+
+                <div class="desc">
+                    <h5>
+                        <div [innerHTML]="product.name | safeHtml"> </div>
+
+                    </h5>
+                    <h6>
+                        <div [innerHTML]="product.price | safeHtml"> </div>
+                    </h6>
+                    <a target="_blank" [href]=product.backlink style="color: #fff;" class="btn btn-dark"> Pre-order </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <br/>
+        <ngb-pagination id="paging" class="d-flex justify-content-center" [rotate]="true" [maxSize]="5" [(page)]="page" [boundaryLinks]="true" [pageSize]="pageSize" [collectionSize]=(model|productFilter:filterargs)?.length></ngb-pagination>
+    </div>
+</div>

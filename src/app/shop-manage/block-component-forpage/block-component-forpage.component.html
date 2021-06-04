@@ -1,0 +1,99 @@
+<!-- <div *ngFor="let post of shop.dataFeed"> -->
+<!-- <div (deferLoad)="showMyElement=true "> -->
+<div #postBlock (click)="disposeElement()" class="post-item">
+    <div class="post-item__head ">
+        <div class="post-item__info media align-items-center ">
+            <a class="post-item__avatar gapo-avatar gapo-avatar--40 mr-2 " [routerLink]="['/page', shop.id]" [style.background-image]="'url('+ shop.avatar +')'"></a>
+            <div class="media-body ">
+                <a class="post-item__author font-weight-bold mb-1 " [routerLink]="['/page', shop.id]">
+                                {{shop.name}}
+                                <img src="./assets/icon/checkmark.svg " alt=" " style="width: 13px; height: 13px; margin-left: 5px; margin-bottom: 3px; ">
+                            </a>
+                <div class="d-flex align-items-center font-size-small text-secondary ">
+                    <a class="text-secondary " href="/909/posts/q7btq0p9 ">
+                                Cập nhật 0 phút trước
+                                </a>
+                </div>
+            </div>
+            <div class="dropdown post-item__more ">
+                <div class="dropdown ">
+                    <button type="button" aria-haspopup="true" (click)="ShowMenuPost()" aria-expanded="false " class="hidden btn btn-link btn-sm showArea"><p style="font-size: 24px; ">
+                                    <b>...</b></p>
+                                </button>
+                    <div tabindex="-1 " #MenuofPost role="menu " aria-hidden="true" class="dropdown-menu dropdown-menu-right" style="z-index: 3; ">
+                        <button type="button " (click)="hiding(blockPost)" tabindex="0 " role="menuitem " class="dropdown-item">
+                                        <i class="svg-icon icon-hide mr-2 "></i>Ẩn bài viết
+                        </button>
+                        <button type="button " (click)="hideShop(shop)" tabindex="0 " role="menuitem " class="dropdown-item ">
+                                        <i class="svg-icon icon-copy mr-2 "></i>Ẩn bài viết từ người này
+                          </button>
+                        <!-- <button type="button " tabindex="0 " role="menuitem " class="dropdown-item ">
+                                        <i class="svg-icon icon-copy mr-2 "></i>Copy link bài viết
+                                    </button>
+                            <button type="button " tabindex="0 " role="menuitem " class="dropdown-item ">
+                                        <i class="svg-icon icon-report mr-2 "></i>Báo cáo bài viết</button>
+                            <button type="button " tabindex="0 " role="menuitem" class="dropdown-item ">
+                                            <i class="svg-icon icon-block mr-2 "></i>Chặn người này
+                                        </button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="post-item__content "><br>
+        <div>
+            <div>
+                <div class="text-display ">
+                    <a href="/hashtags/custom " class="post-item__hashtag ">#Hashtag custom</a>
+                    <br> {{blockPost.content}}<br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="blockPost.typePost === 'image'" [ngClass]="'post-item__attachment post-item__attachment--'+(blockPost.images.length>5?'5': blockPost.images.length)">
+        <ng-container *ngFor="let item of blockPost.images.slice(0,5); let i = index" [attr.data-index]="i">
+            <div [ngClass]="'attachment__item attachment__item__vertical--' + (i+1)">
+                <a [style.background-image]="'url('+ blockPost.images[i] +')'"><img [src]="blockPost.images[0]" alt="post-img " class="img-fluid ">
+                    <div *ngIf="blockPost.images.length > 5 && i===4">
+                        <span class="more-photo">+{{blockPost.images.length - 5}}</span>
+                    </div>
+                </a>
+            </div>
+        </ng-container>
+    </div>
+
+    <div *ngIf="blockPost.typePost === 'video'" class="post-item__attachment post-item__attachment--1">
+        <div class="attachment__item attachment__item--1" style="min-height: 206px;">
+            <div>
+                <div class="video-max">
+                    <div class="video-bg" style="background-image: url('https://gapo-video.s3-ap-southeast-1.amazonaws.com/videos/results/cee41c63-bed5-4853-a529-8bb383567716/thumbnail_00001.jpg');"></div>
+                    <div class="video-bg-filter"></div>
+                    <div>
+                        <div class="player-container" style="width: auto; height: 100%;">
+                            <video preload="auto" controls="" [src]="blockPost.videoLink" style="width: auto; height: 100%;"></video></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-item__stats d-flex "><a class="post-item__stats__item d-flex align-items-center mr-auto text-dark "><i style=" background-image: url('./assets/icon/like-circle.svg');" class="svg-icon icon-like-circle mr-1 "></i>404</a><a class="post-item__stats__item text-dark ">3  bình luận</a>
+        <a class="post-item__stats__item text-dark "></a>
+    </div>
+    <div class="post-item__actions gapo-group ">
+        <a class="post-item__action " style="position: relative; ">
+            <div class="reaction-box ">
+                <div class="reaction-icon like "><label>Thích</label></div>
+                <div class="reaction-icon love "><label>Yêu thích</label></div>
+                <div class="reaction-icon haha "><label>Haha</label></div>
+                <div class="reaction-icon wow "><label>Wow</label></div>
+                <div class="reaction-icon sad "><label>Buồn</label></div>
+                <div class="reaction-icon angry"><label>Phẫn nộ</label></div>
+            </div>
+            <i class="svg-icon icon-like-alt mr-2 "></i>Thích</a>
+
+    </div>
+</div>
+<!-- </div> -->
+<!-- </div> -->
